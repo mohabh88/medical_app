@@ -1,0 +1,4 @@
+{% extends "outline.html" %}
+{% block 'extended-content' %} this is the Patient's info page 
+{% endblock %}
+
