@@ -1,10 +1,18 @@
 {% extends "outline.html" %}
 {% block 'patient-div' %} 
+<h4>Patient's details</h4>
 First name: {{patient.first_name}} <br>
 Last name: {{patient.last_name}} <br>
 Email: {{patient.email}} <br>
 Disease: {{patient.disease}} <br>
-Last visit: {{patient.last_visit}} <br> 
+Last visit: {{patient.last_visit}} <br>
+
+<h4>Sensor Readings</h4>
+<ul>{% for reading in patient.sensorreading_set.all %}
+{{reading.reading_time}}
+{{reading.sensor_type}}
+{{reading.reading_value}}<hr>
+{% endfor %}</ul> 
 {% endblock %}
 
 

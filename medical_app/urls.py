@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'webapp.views.home', name= 'home'),
     url(r'patient_info', 'webapp.views.patient_info', name= 'patient_info'),
-     url(r'patient-by-id',  'webapp.views.get_patient_id', name='patient_id'),
+    url(r'patient-by-id',  'webapp.views.get_patient_id', name='patient_id'),
     #url(r'get_patient_info', 'webapp.views.get_patient_info', name ='patient info'),
 )
 

@@ -11,14 +11,12 @@ def home(request):
     return render_to_response('outline.html')
 
 def patient_info(request):
-    try:
-    	return render_to_response('patient_info.html')
-    except:
-        url = reverse('outline.html')
+    return render_to_response('patient_info.html')
 
 def get_patient_id(request):
-    patient_id = request.GET['patient-id']
-    mypatient =Patient.objects.get(pk=patient_id)
-    print mypatient.first_name
-    print ####
-    return render_to_response('patient_info.html', {"patient": mypatient}, context_instance=RequestContext(request))
+   try:
+       patient_id = request.GET['patient-id']
+       mypatient =Patient.objects.get(pk=patient_id)
+       return render_to_response('patient_info.html', {"patient": mypatient}, context_instance=RequestContext(request))
+   except:
+       return HttpResponseRedirect(reverse('patient_info')) 

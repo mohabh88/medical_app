@@ -13,5 +13,6 @@ class Patient(models.Model):
 class SensorReading(models.Model):
     patient = models.ForeignKey(Patient)
     reading_time = models.DateField()
-    
-    
+    sensor_type = models.CharField(max_length=50)
+    reading_value = models.PositiveIntegerField()
+   
